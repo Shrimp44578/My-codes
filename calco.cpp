@@ -1,9 +1,11 @@
 #include <iostream>
+#include <cmath>
 
 double addition(void);
 double subtraction(void);
 double multiplication(void);
 double division(void);
+double power(void);
 
 char operation;
 
@@ -14,6 +16,7 @@ int main() {
     std::cout << "\t Subtraction: - \n";
     std::cout << "\t Multiplication: * \n";
     std::cout << "\t Divison: / \n";
+    std::cout << "\t Exponent: ^ \n";
     double result;
     std::cout << "Insert operation\n";
     std::cin >> operation;
@@ -33,6 +36,9 @@ int main() {
         case '/':                          // if operation equal to / run function divison
             std::cout << "Dividing\n"; 
             result = division(); 
+        case '^':
+            std::cout << "Power\n";
+            result = power();
         default:                           // print if a valid operation isn't entered
             std::cout << "Please use a valid operation indicator\n";
             break;    
@@ -81,5 +87,15 @@ double division() {                    // Division funtion (activated when slash
     {
         result /= insertnum;
     }
+    return result;
+}
+
+double power() {                       // Power funtion (activated when ^ is inserted in the operation)
+    double result, base, exponent;
+    std::cout << "Insert exponent base\n";
+    std::cin >> base;
+    std::cout << "Insert exponent power\n";
+    std::cin >> exponent;
+    result = pow(base, exponent);
     return result;
 }
