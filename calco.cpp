@@ -33,12 +33,15 @@ int main() {
         case '*':                          // if operation equal to * run function multiplication
             std::cout << "Multiplying\n";
             result = multiplication();
+            break;
         case '/':                          // if operation equal to / run function divison
             std::cout << "Dividing\n"; 
             result = division(); 
-        case '^':
+            break;
+        case '^':                          // if operation equal to ^ run function power
             std::cout << "Power\n";
             result = power();
+            break;
         default:                           // print if a valid operation isn't entered
             std::cout << "Please use a valid operation indicator\n";
             break;    
