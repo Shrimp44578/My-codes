@@ -6,6 +6,7 @@ double subtraction(void);
 double multiplication(void);
 double division(void);
 double power(void);
+double squareroot(void);
 
 char operation;
 
@@ -17,6 +18,7 @@ int main() {
     std::cout << "\t Multiplication: * \n";
     std::cout << "\t Divison: / \n";
     std::cout << "\t Exponent: ^ \n";
+    std::cout << "\t Root: s \n";
     double result;
     std::cout << "Insert operation\n";
     std::cin >> operation;
@@ -43,7 +45,8 @@ int main() {
             result = power();
             break;
         case 's':
-            std::cout << "Square Root\n";
+            std::cout << "Root\n";
+            result = squareroot();
             break;
         default:                           // print if a valid operation isn't entered
             std::cout << "Please use a valid operation indicator\n";
@@ -103,5 +106,15 @@ double power() {                       // Power funtion (activated when ^ is ins
     std::cout << "Insert exponent power\n";
     std::cin >> exponent;
     result = pow(base, exponent);
+    return result;
+}
+
+double squareroot() {
+    double result, base, exponent;
+    std::cout << "Insert base number\n";
+    std::cin >> base;
+    std::cout << "\nInsert root\n";
+    std::cin >> exponent;
+    result = pow(base, (1/exponent));
     return result;
 }
