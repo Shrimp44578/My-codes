@@ -42,6 +42,9 @@ int main() {
             std::cout << "Power\n";
             result = power();
             break;
+        case 's':
+            std::cout << "Square Root\n";
+            break;
         default:                           // print if a valid operation isn't entered
             std::cout << "Please use a valid operation indicator\n";
             break;    
